@@ -409,6 +409,24 @@ main {
 }
 
 /* GRID UTILS */
+.u-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+@media (max-width: 1200px) {
+    .u-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .u-grid-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
