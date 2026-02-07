@@ -86,7 +86,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Attach scroll trigger to find the next section
+    // SECTION JUMP SCROLLING
+    let isScrolling = false;
+    const scrollSections = [
+        document.getElementById('compliance'),
+        document.getElementById('verticals'),
+        document.getElementById('organization'),
+        document.getElementById('terminal'),
+        document.querySelector('footer')
+    ].filter(el => el);
+
+    window.addEventListener('wheel', (e) => {
+        if (isScrolling) return;
+
+        const direction = e.deltaY > 0 ? 1 : -1;
+        let currentIndex = -1;
+
+        // Find current section based on scroll position
+        const scrollPos = window.scrollY + 100; // Offset for header
+        scrollSections.forEach((section, index) => {
+            if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+                currentIndex = index;
+            }
+        });
+
+        if (currentIndex === -1) return;
+
+        const nextIndex = currentIndex + direction;
+        if (nextIndex >= 0 && nextIndex < scrollSections.length) {
+            e.preventDefault();
+            isScrolling = true;
+
+            scrollSections[nextIndex].scrollIntoView({ behavior: 'smooth' });
+
+            setTimeout(() => {
+                isScrolling = false;
+            }, 1000); // Lock for 1s to allow animation
+        }
+    }, { passive: false });
+
+    // Keep the click trigger for standard UI elements
     document.querySelectorAll('.scroll-trigger').forEach(trigger => {
         trigger.addEventListener('click', (e) => {
             const currentSection = trigger.closest('section');
@@ -95,11 +134,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (nextSection) {
                 nextSection.scrollIntoView({ behavior: 'smooth' });
             } else {
-                // Fallback to original logic if no next section found
-                window.scrollTo({
-                    top: window.innerHeight * 0.95,
-                    behavior: 'smooth'
-                });
+                const footer = document.querySelector('footer');
+                if (footer) footer.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
