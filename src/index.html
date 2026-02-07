@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VyomFix | Industrial Aerospace Efficiency</title>
+    <meta name="description"
+        content="Optimize aerospace manufacturing with VyomFix Assemble It. Professional workflow orchestration for rockets and spacecraft.">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="assets/img/Vyomfix_White.png">
+
+</head>
+
+<body>
+    <canvas id="antigravity-canvas"></canvas>
+
+    <header>
+        <div class="container">
+            <nav id="navbar">
+                <a href="index.html" class="logo">
+                    <img src="assets/img/vyom.jpeg" alt="VyomFix Logo">
+                </a>
+                <div class="nav-links">
+                    <a href="#">Home</a>
+                    <a href="platform.html">Platform</a>
+                    <a href="enterprise.html">Enterprise</a>
+                </div>
+                <div class="nav-actions">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark theme">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-outline-white">Client Login</a>
+                    <a href="enterprise.html" class="btn btn-primary">Request Demo</a>
+                    <button class="mobile-toggle" aria-label="Menu" id="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="u-main-padding">
+        <section id="hero" class="hero-full-width reveal">
+            <div class="hero-video-container">
+                <video autoplay muted playsinline class="hero-video" id="hero-video">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="hero-layout">
+                    <div class="hero-content">
+                        <div class="badge">Assemble It</div>
+                        <h1>Orchestrating the Future of Aerospace Assembly</h1>
+                        <p>From LEO constellations to heavy lift boosters—unify your manufacturing floor with precision
+                            orchestration, automated compliance, and real-time floor pathing.</p>
+                        <div class="u-flex-gap u-margin-top-40 hero-btns">
+                            <a href="enterprise.html" class="btn btn-primary">Start Engineering Demo</a>
+                            <a href="assets/pdf/white_paper.pdf" class="btn btn-outline" download>
+                                <i class="fas fa-file-pdf"></i> Download Whitepaper
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="terminal-mock">
+                            <div class="terminal-header">
+                                <div class="terminal-dots">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                </div>
+                                <span class="terminal-title">vyomfix terminal - </span>
+                            </div>
+                            <div class="terminal-code">
+                                <div>> vyomfix --mode primary-assembly</div>
+                                <div class="t-purple">[SYSTEM] Initializing autonomous operations layer</div>
+                                <div class="t-cyan">[READY] Primary assembly stage armed</div>
+                                <div>[SCAN] Requirements traceability ...... VERIFIED</div>
+                                <div>[SCAN] BOM validation ................ 100% compliant [FAA-R2]</div>
+                                <div>[AI] Cross-checking historical anomalies</div>
+                                <div class="t-purple">[AI] No critical deviations detected</div>
+                                <div>[SYNC] Workflow state ................. LOCKED</div>
+                                <div class="u-opacity-50">[LOG] Monitoring execution • awaiting operator input</div>
+                                <div class="cursor">_</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator scroll-trigger">
+                <span>Explore Mission</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <section class="container">
+            <!-- CORE MODULES GRID -->
+            <div id="modules" class="u-margin-top-120 reveal">
+                <div class="u-text-center u-margin-bottom-60">
+                    <h2>Core Orchestration Modules</h2>
+                </div>
+                <div class="module-grid">
+                    <div class="module-card">
+                        <div class="feat-icon"><i class="fas fa-network-wired"></i></div>
+                        <h4>Floor Logic</h4>
+                        <p>Real-time spatial optimization for assembly technicians and robotic nodes.</p>
+                    </div>
+                    <div class="module-card">
+                        <div class="feat-icon"><i class="fas fa-clipboard-check"></i></div>
+                        <h4>Auto-Compliance</h4>
+                        <p>Streaming documentation generation for FAA, NASA, and ESA standards.</p>
+                    </div>
+                    <div class="module-card">
+                        <div class="feat-icon"><i class="fas fa-boxes-stacked"></i></div>
+                        <h4>BOM Sync</h4>
+                        <p>Zero-latency synchronization between engineering CAD and floor assembly.</p>
+                    </div>
+                    <div class="module-card">
+                        <div class="feat-icon"><i class="fas fa-microscope"></i></div>
+                        <h4>QA Vision</h4>
+                        <p>Neural validation of assembly steps via integrated floor sensors.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- THE WORKFLOW -->
+            <div id="workflow" class="u-margin-top-120 reveal">
+                <div class="u-margin-bottom-80">
+                    <div class="u-flex u-flex-gap u-align-center u-margin-bottom-20">
+                        <div class="badge">Industrial Workflow</div>
+                        <div class="badge badge-gold">Hybrid AI Powered</div>
+                    </div>
+                    <h1>Aerospace Orchestration Matrix</h1>
+                    <p class="u-text-secondary">How VyomFix transforms unstructured engineering models into
+                        airworthy
+                        assets through Hybrid AI.</p>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-num">01</div>
+                    <div class="step-text">
+                        <h3>Digital Graph Integration</h3>
+                        <p>Our LLM-driven engine parses unstructured PLM data and Bill of Materials to construct
+                            a
+                            dynamic Knowledge Graph. This creates a high-fidelity digital twin that maps
+                            relationship
+                            dependencies between every fastener, sensor, and subsystem.</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-num">02</div>
+                    <div class="step-text">
+                        <h3>Cognitive Floor Orchestration</h3>
+                        <p>The platform synchronizes assembly tasks in real-time, assigning missions to work
+                            cells based
+                            on hardware telemetry and technician certification levels. This elimimates queuing
+                            bottlenecks via predictive throughput analysis.</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-num">03</div>
+                    <div class="step-text">
+                        <h3>Validation & Anomaly Shield</h3>
+                        <p>During integration, our ML models capture telemetry and photographic evidence to
+                            perform
+                            real-time anomaly detection. Every step generates a back-trackable decision tree,
+                            automatically populating the Regulatory Shield for airworthiness sign-off.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA SECTION -->
+            <div id="cta" class="u-margin-top-120 reveal">
+                <div class="dashboard-window u-text-center u-p-60 u-haze u-shadow-premium">
+                    <div class="badge">Enterprise Ready</div>
+                    <h1 class="u-text-center">Accelerate Your Launch Timeline</h1>
+                    <p class="u-margin-bottom-40 u-text-secondary u-max-800 u-mx-auto">
+                        Join the next generation of aerospace manufacturers using VyomFix to reduce assembly
+                        cycles by
+                        up to 40%.
+                    </p>
+                    <div class="u-flex u-flex-gap u-align-center" style="justify-content: center;">
+                        <a href="enterprise.html" class="btn btn-primary">Request Engineering Access</a>
+                        <a href="assets/pdf/white_paper.pdf" class="btn btn-outline" download>Technical Specs
+                            (PDF)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo u-margin-bottom-25">
+                        <img src="assets/img/vyom.jpeg" alt="VyomFix Logo">
+                    </a>
+                    <p class="u-text-secondary u-font-0-9">Modernizing aerospace manufacturing
+                        through precision orchestration and automated compliance.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <ul class="f-links">
+                        <li><a href="platform.html#terminal">The Terminal</a></li>
+                        <li><a href="platform.html#verticals">Industry Verticals</a></li>
+                        <li><a href="platform.html#compliance">Compliance Hub</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="f-links">
+                        <li><a href="enterprise.html">Security Protocol</a></li>
+                        <li><a href="enterprise.html">Aerospace Network</a></li>
+                        <li><a href="enterprise.html">Contact Engineering</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Use</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Social</h4>
+                    <div class="nav-links u-flex-gap">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-btm">
+                <p>VyomFix Labs</p>
+                <div class="u-flex-gap-20">
+                    <a href="privacy.html" class="u-text-secondary u-no-decoration">Privacy Policy</a>
+                    <a href="terms.html" class="u-text-secondary u-no-decoration">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Terminal typing animation simulation
+        const cursor = document.querySelector('.cursor');
+        setInterval(() => {
+            cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+        }, 500);
+    </script>
+</body>
+
+</html>

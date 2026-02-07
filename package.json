@@ -1,0 +1,19 @@
+{
+  "name": "vyomfix-assemble-it",
+  "version": "1.0.0",
+  "description": "AI B2B SaaS Landing Page",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.18.2",
+    "nodemailer": "^7.0.13"
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}
