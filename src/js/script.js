@@ -86,11 +86,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Attach scrollDown to any element with class 'scroll-trigger'
+    // Attach scroll trigger to find the next section
     document.querySelectorAll('.scroll-trigger').forEach(trigger => {
         trigger.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollDown();
+            const currentSection = trigger.closest('section');
+            const nextSection = currentSection ? currentSection.nextElementSibling : null;
+
+            if (nextSection) {
+                nextSection.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                // Fallback to original logic if no next section found
+                window.scrollTo({
+                    top: window.innerHeight * 0.95,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 
