@@ -409,12 +409,6 @@ main {
 }
 
 /* GRID UTILS */
-.u-grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -1204,5 +1198,24 @@ footer {
 
     .module-grid {
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* HIGH PRECEDENCE GRID UTILITIES */
+.u-grid-4 {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 30px !important;
+}
+
+@media (max-width: 1200px) {
+    .u-grid-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .u-grid-4 {
+        grid-template-columns: 1fr !important;
     }
 }
