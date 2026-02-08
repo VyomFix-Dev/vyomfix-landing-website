@@ -140,75 +140,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // HERO VIDEO RANDOMIZER (Seamless Cross-fade System)
-    const v1 = document.getElementById('video-1');
-    const v2 = document.getElementById('video-2');
-
-    if (v1 && v2) {
-        const videoSources = [
-            'assets/video/v1.mp4',
-            'assets/video/v2.mp4',
-            'assets/video/v3.mp4'
-        ];
-
-        let videos = [v1, v2];
-        let activeIdx = 0;
-        let lastSrcIdx = -1;
-
-        const loadNextVideo = (videoElement) => {
-            let nextSrcIdx;
-            if (videoSources.length > 1) {
-                do {
-                    nextSrcIdx = Math.floor(Math.random() * videoSources.length);
-                } while (nextSrcIdx === lastSrcIdx);
-            } else {
-                nextSrcIdx = 0;
-            }
-
-            lastSrcIdx = nextSrcIdx;
-            videoElement.src = videoSources[nextSrcIdx];
-            videoElement.load();
-        };
-
-        const handleVideoEnd = () => {
-            const currentVideo = videos[activeIdx];
-            activeIdx = 1 - activeIdx;
-            const nextVideo = videos[activeIdx];
-
-            // Set next video to play
-            nextVideo.play().then(() => {
-                // Trigger CSS crossfade
-                currentVideo.classList.remove('active');
-                nextVideo.classList.add('active');
-
-                // Prepare the previously active video for next round after it's hidden
-                setTimeout(() => {
-                    currentVideo.pause();
-                    loadNextVideo(currentVideo);
-                }, 2000);
-            }).catch(e => {
-                console.log("Transition play failed:", e);
-                // Fallback: just swap sources if preloading failed
-                loadNextVideo(nextVideo);
-                nextVideo.play();
-            });
-        };
-
-        // Initial Initialization
-        const startHero = () => {
-            lastSrcIdx = Math.floor(Math.random() * videoSources.length);
-            v1.src = videoSources[lastSrcIdx];
-
-            v1.play().then(() => {
-                // Once first video is playing, preload the second
-                loadNextVideo(v2);
-            }).catch(e => console.log("Initial play blocked:", e));
-        };
-
-        v1.addEventListener('ended', handleVideoEnd);
-        v2.addEventListener('ended', handleVideoEnd);
-
-        startHero();
+    // HERO VIDEO INITIALIZATION
+    const heroVideo = document.getElementById('video-1');
+    if (heroVideo) {
+        heroVideo.play().catch(e => console.log("Hero video autoplay blocked:", e));
     }
 
     // ANTIGRAVITY CANVAS SYSTEM
