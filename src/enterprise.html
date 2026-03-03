@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enterprise Solutions | VyomFix Assemble It</title>
+    <title>Enterprise Solutions | VyomFix Labs Assemble It</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
         <div class="container">
             <nav id="navbar">
                 <a href="index.html" class="logo">
-                    <img src="assets/img/vyom.jpeg" alt="VyomFix Logo">
+                    <img src="assets/img/vyom.jpeg" alt="VyomFix Labs Logo">
                 </a>
                 <div class="nav-links">
                     <a href="index.html">Home</a>
@@ -52,7 +52,7 @@
                 <p class="u-text-secondary u-margin-bottom-40">
                     Request a custom demo or download our <a href="assets/pdf/white_paper.pdf"
                         class="t-brand-primary u-no-decoration u-weight-600">Technical
-                        Whitepaper</a> to see how VyomFix fits into
+                        Whitepaper</a> to see how VyomFix Labs fits into
                     your aerospace production pipeline.
                 </p>
             </div>
@@ -107,7 +107,7 @@
                         btn.textContent = 'Transmitting Data...';
                         status.style.display = 'block';
                         status.style.color = 'var(--brand-primary)';
-                        status.textContent = 'Connecting to VyomFix Secure Gateway...';
+                        status.textContent = 'Connecting to VyomFix LabsSecure Gateway...';
 
                         try {
                             const response = await fetch('/api/contact', {
@@ -125,7 +125,7 @@
                             }
                         } catch (err) {
                             status.style.color = 'var(--brand-accent)';
-                            status.textContent = 'Transmission Error: Please contact systems-admin@vyomfix.com';
+                            status.textContent = 'Transmission Error: Please contact systems-tech.admin@vyomfix.com';
                         } finally {
                             btn.disabled = false;
                             btn.textContent = 'Request Mission Briefing';
