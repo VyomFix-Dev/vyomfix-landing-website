@@ -41,12 +41,70 @@ document.addEventListener('DOMContentLoaded', () => {
     // MOBILE MENU TOGGLE
     const mobileToggle = document.querySelector('.mobile-toggle');
     if (mobileToggle) {
+        // Create mobile menu overlay
+        const overlay = document.createElement('div');
+        overlay.className = 'mobile-menu-overlay';
+        overlay.id = 'mobile-menu';
+
+        // Close button
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'mobile-menu-close';
+        closeBtn.setAttribute('aria-label', 'Close menu');
+        closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+        overlay.appendChild(closeBtn);
+
+        // Clone nav links into the overlay
+        const navLinks = document.querySelector('.nav-links');
+        if (navLinks) {
+            const links = navLinks.querySelectorAll('a');
+            links.forEach(link => {
+                const clone = link.cloneNode(true);
+                overlay.appendChild(clone);
+            });
+        }
+
+        // Add action buttons
+        const navActions = document.querySelector('.nav-actions');
+        if (navActions) {
+            const actionBtns = navActions.querySelectorAll('a.btn');
+            actionBtns.forEach(btn => {
+                const clone = btn.cloneNode(true);
+                clone.style.display = 'inline-flex';
+                overlay.appendChild(clone);
+            });
+        }
+
+        document.body.appendChild(overlay);
+
+        // Open menu
         mobileToggle.addEventListener('click', () => {
-            // Simplified for enterprise demo
-            console.log('Mobile menu activated');
-            alert('Navigation menu is optimized for desktop enterprise oversight. Mobile routes are available for read-only access.');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Close menu - close button
+        closeBtn.addEventListener('click', () => {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close menu - clicking a link
+        overlay.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Close menu - clicking outside (on overlay background)
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) {
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         });
     }
+
 
     // STATS COUNTER IF PRESENT
     const counters = document.querySelectorAll('.stat-val');
