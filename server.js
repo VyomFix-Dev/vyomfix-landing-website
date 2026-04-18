@@ -7,6 +7,7 @@ const nodemailer = require('nodemailer');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.disable('etag');
 app.use(cors());
 app.use(express.json());
 
@@ -17,7 +18,11 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static(path.join(__dirname, 'src')));
+app.use(express.static(path.join(__dirname, 'src'), {
+  etag: false,
+  lastModified: false,
+  cacheControl: false
+}));
 
 // Route for specific pages to allow clean URLs
 app.get('/platform', (req, res) => {
