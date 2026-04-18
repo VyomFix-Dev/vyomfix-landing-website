@@ -9,6 +9,17 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+
+app.use((req, res, next) => {
+  const path = req.path;
+  if (path.endsWith('.html') || path === '/' || path === '/platform' || path === '/enterprise' || path === '/login') {
+    res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+  } else {
+    res.set('Cache-Control', 'public, max-age=31536000, immutable');
+  }
+  next();
+});
+
 app.use(express.static(path.join(__dirname, 'src')));
 
 // Route for specific pages to allow clean URLs
