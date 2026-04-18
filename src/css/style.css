@@ -560,15 +560,15 @@ nav {
 }
 
 .logo img {
-    height: 60px;
+    height: 65px;
     width: auto;
-    max-width: 250px;
+    max-width: 100%;
     object-fit: contain;
+    transition: var(--transition-smooth);
 }
 
 footer .logo img {
-    height: 120px;
-    max-width: 400px;
+    height: 80px;
 }
 
 /* Logo theme switching — header is always dark, so white logo by default */
