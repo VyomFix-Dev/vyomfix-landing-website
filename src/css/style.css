@@ -567,6 +567,15 @@ nav {
     object-fit: contain;
 }
 
+/* Logo theme switching — header is always dark, so white logo by default */
+.logo-black {
+    display: none;
+}
+
+.logo-white {
+    display: block;
+}
+
 .logo-text {
     line-height: 1;
 }
@@ -970,7 +979,8 @@ footer {
     margin-top: -150px;
 }
 
-.hero-video-container {
+/* Globe Container (replaces video) */
+.hero-globe-container {
     position: absolute;
     top: 0;
     left: 0;
@@ -978,23 +988,26 @@ footer {
     height: 100%;
     overflow: hidden;
     z-index: 0;
+    background: linear-gradient(180deg, #05060A 0%, #0B0F1A 100%);
     pointer-events: none;
 }
 
-.hero-video {
+#globe-canvas {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 0;
+    left: 0;
+    /* width and height controlled by Three.js renderer.setSize() */
+    display: block;
+}
+
+.globe-fallback {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: translate(-50%, -50%) scale(1.2);
-    opacity: 0;
-    transition: opacity 2s ease-in-out;
-}
-
-.hero-video.active {
-    opacity: 1;
+    display: none;
 }
 
 .hero-overlay {
@@ -1003,7 +1016,12 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background: linear-gradient(
+        135deg,
+        rgba(5, 6, 10, 0.55) 0%,
+        rgba(11, 15, 26, 0.25) 50%,
+        rgba(5, 6, 10, 0.4) 100%
+    );
     z-index: 1;
 }
 
@@ -1017,6 +1035,20 @@ footer {
     z-index: 2;
     padding: 150px 0 100px;
     color: #ffffff;
+}
+
+.cta-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+    text-align: left;
+}
+
+@media screen and (max-width: 900px) {
+    .cta-layout {
+        grid-template-columns: 1fr;
+    }
 }
 
 .hero-layout h1,

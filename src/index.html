@@ -26,7 +26,7 @@
         <div class="container">
             <nav id="navbar">
                 <a href="index.html" class="logo">
-                    <img src="assets/img/vyom.jpeg" alt="VyomFix Logo">
+                    <img src="assets/img/Vyomfix_White_nobg.png" alt="VyomFix Logo">
                 </a>
                 <div class="nav-links">
                     <a href="#">Home</a>
@@ -50,9 +50,9 @@
 
     <main class="u-main-padding">
         <section id="hero" class="hero-full-width reveal">
-            <div class="hero-video-container">
-                <video autoplay muted loop playsinline preload="metadata" class="hero-video active" id="video-1"
-                    src="assets/video/v1 - Made with Clipchamp.mp4"></video>
+            <div class="hero-globe-container" id="hero-globe-container">
+                <canvas id="globe-canvas"></canvas>
+                <img src="assets/img/globe-fallback.png" alt="" class="globe-fallback" id="globe-fallback">
                 <div class="hero-overlay"></div>
             </div>
             <div class="container">
@@ -67,30 +67,6 @@
                             <a href="assets/pdf/white_paper.pdf" class="btn btn-outline" download>
                                 <i class="fas fa-file-pdf"></i> Download Whitepaper
                             </a>
-                        </div>
-                    </div>
-                    <div class="hero-visual">
-                        <div class="terminal-mock">
-                            <div class="terminal-header">
-                                <div class="terminal-dots">
-                                    <span class="dot red"></span>
-                                    <span class="dot yellow"></span>
-                                    <span class="dot green"></span>
-                                </div>
-                                <span class="terminal-title">vyomfix labs terminal - </span>
-                            </div>
-                            <div class="terminal-code">
-                                <div>> vyomfix labs --mode primary-assembly</div>
-                                <div class="t-purple">[SYSTEM] Initializing autonomous operations layer</div>
-                                <div class="t-cyan">[READY] Primary assembly stage armed</div>
-                                <div>[SCAN] Requirements traceability ...... VERIFIED</div>
-                                <div>[SCAN] BOM validation ................ 100% compliant [FAA-R2]</div>
-                                <div>[AI] Cross-checking historical anomalies</div>
-                                <div class="t-purple">[AI] No critical deviations detected</div>
-                                <div>[SYNC] Workflow state ................. LOCKED</div>
-                                <div class="u-opacity-50">[LOG] Monitoring execution • awaiting operator input</div>
-                                <div class="cursor">_</div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -169,20 +145,44 @@
                 </div>
             </div>
 
-            <!-- CTA SECTION -->
             <div id="cta" class="u-margin-top-120 reveal">
-                <div class="dashboard-window u-text-center u-p-60 u-haze u-shadow-premium">
-                    <div class="badge">Enterprise Ready</div>
-                    <h1 class="u-text-center">Accelerate Your Launch Timeline</h1>
-                    <p class="u-margin-bottom-40 u-text-secondary u-max-800 u-mx-auto">
-                        Join the next generation of aerospace manufacturers using VyomFix Labs to reduce assembly
-                        cycles by
-                        up to 40%.
-                    </p>
-                    <div class="u-flex u-flex-gap u-align-center" style="justify-content: center;">
-                        <a href="enterprise.html" class="btn btn-primary">Request Engineering Access</a>
-                        <a href="assets/pdf/white_paper.pdf" class="btn btn-outline" download>Technical Specs
-                            (PDF)</a>
+                <div class="dashboard-window u-p-60 u-haze u-shadow-premium">
+                    <div class="cta-layout">
+                        <div class="cta-content">
+                            <div class="badge">Enterprise Ready</div>
+                            <h2>Accelerate Your Launch Timeline</h2>
+                            <p class="u-margin-bottom-40 u-text-secondary u-max-800">
+                                Join the next generation of aerospace manufacturers using VyomFix Labs to reduce assembly cycles by up to 40%.
+                            </p>
+                            <div class="u-flex u-flex-gap u-align-center">
+                                <a href="enterprise.html" class="btn btn-primary">Request Engineering Access</a>
+                                <a href="assets/pdf/white_paper.pdf" class="btn btn-outline" download>Technical Specs (PDF)</a>
+                            </div>
+                        </div>
+                        <div class="cta-visual">
+                            <div class="terminal-mock">
+                                <div class="terminal-header">
+                                    <div class="terminal-dots">
+                                        <span class="dot red"></span>
+                                        <span class="dot yellow"></span>
+                                        <span class="dot green"></span>
+                                    </div>
+                                    <span class="terminal-title">vyomfix labs terminal - </span>
+                                </div>
+                                <div class="terminal-code" style="text-align: left;">
+                                    <div>> vyomfix labs --mode primary-assembly</div>
+                                    <div class="t-purple">[SYSTEM] Initializing autonomous operations layer</div>
+                                    <div class="t-cyan">[READY] Primary assembly stage armed</div>
+                                    <div>[SCAN] Requirements traceability ...... VERIFIED</div>
+                                    <div>[SCAN] BOM validation ................ 100% compliant [FAA-R2]</div>
+                                    <div>[AI] Cross-checking historical anomalies</div>
+                                    <div class="t-purple">[AI] No critical deviations detected</div>
+                                    <div>[SYNC] Workflow state ................. LOCKED</div>
+                                    <div class="u-opacity-50">[LOG] Monitoring execution • awaiting operator input</div>
+                                    <div class="cursor">_</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -194,7 +194,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <a href="index.html" class="logo u-margin-bottom-25">
-                        <img src="assets/img/vyom.jpeg" alt="VyomFix Logo">
+                        <img src="assets/img/Vyomfix_White_nobg.png" alt="VyomFix Logo">
                     </a>
                     <p class="u-text-secondary u-font-0-9">Modernizing aerospace manufacturing
                         through precision orchestration and automated compliance.</p>
@@ -237,6 +237,8 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="//unpkg.com/globe.gl"></script>
+    <script src="js/globe.js"></script>
     <script>
         // Terminal typing animation simulation
         const cursor = document.querySelector('.cursor');

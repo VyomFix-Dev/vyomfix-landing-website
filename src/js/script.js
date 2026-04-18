@@ -198,11 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // HERO VIDEO INITIALIZATION
-    const heroVideo = document.getElementById('video-1');
-    if (heroVideo) {
-        heroVideo.play().catch(e => console.log("Hero video autoplay blocked:", e));
-    }
+    // HERO GLOBE — initialized separately in globe.js (lazy-loaded)
 
     // ANTIGRAVITY CANVAS SYSTEM
     const canvas = document.getElementById('antigravity-canvas');
