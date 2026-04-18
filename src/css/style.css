@@ -561,10 +561,14 @@ nav {
 
 .logo img {
     height: 60px;
-    /* Bigger logo */
     width: auto;
     max-width: 250px;
     object-fit: contain;
+}
+
+footer .logo img {
+    height: 120px;
+    max-width: 400px;
 }
 
 /* Logo theme switching — header is always dark, so white logo by default */
@@ -1731,6 +1735,10 @@ footer {
         height: 40px;
     }
 
+    footer .logo img {
+        height: 80px;
+    }
+
     header {
         padding: 12px 0;
     }
@@ -1856,6 +1864,10 @@ footer {
 
     .logo img {
         height: 35px;
+    }
+
+    footer .logo img {
+        height: 65px;
     }
 
     .u-font-5 {
