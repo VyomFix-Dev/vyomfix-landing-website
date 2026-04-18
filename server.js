@@ -11,12 +11,9 @@ app.use(cors());
 app.use(express.json());
 
 app.use((req, res, next) => {
-  const path = req.path;
-  if (path.endsWith('.html') || path === '/' || path === '/platform' || path === '/enterprise' || path === '/login') {
-    res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
-  } else {
-    res.set('Cache-Control', 'public, max-age=31536000, immutable');
-  }
+  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+  res.setHeader('Pragma', 'no-cache');
+  res.setHeader('Expires', '0');
   next();
 });
 
